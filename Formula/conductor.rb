@@ -14,6 +14,7 @@ class Conductor < Formula
   # dependencies: Claude Code ships via the desktop app or npm, and
   # OpenAI's `codex` CLI ships via npm — neither has a Homebrew formula
   # under those names. Users install them separately.
+  depends_on "gemini-cli" => :optional
   depends_on "ollama" => :optional
 
   def install
