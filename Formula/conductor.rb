@@ -10,10 +10,11 @@ class Conductor < Formula
 
   # Optional CLI providers. Conductor falls back to whichever provider is
   # configured at call time, so none of these are hard requirements.
-  depends_on "claude"  => :recommended
-  depends_on "codex"   => :recommended
-  depends_on "gemini-cli" => :optional
-  depends_on "ollama"  => :optional
+  # `claude` and `codex` are intentionally NOT declared as Homebrew
+  # dependencies: Claude Code ships via the desktop app or npm, and
+  # OpenAI's `codex` CLI ships via npm — neither has a Homebrew formula
+  # under those names. Users install them separately.
+  depends_on "ollama" => :optional
 
   def install
     venv = libexec/"venv"
