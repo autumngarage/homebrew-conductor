@@ -24,6 +24,16 @@ class Conductor < Formula
     bin.install_symlink venv/"bin/conductor"
   end
 
+  def post_install
+    # Refresh user-scope conductor-managed integration files so `brew upgrade`
+    # is the single, complete operator action — no manual `conductor init` runs.
+    # Failure here must NOT fail the install: an opoo warning + the binary
+    # is still functional, and `conductor doctor` will surface any drift.
+    system bin/"conductor", "init", "-y", "--quiet", "--remaining"
+  rescue StandardError => e
+    opoo "conductor post_install refresh skipped: #{e}"
+  end
+
   def caveats
     <<~'EOS'
       conductor
