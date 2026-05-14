@@ -1,8 +1,8 @@
 class Conductor < Formula
   desc "Pick an LLM, give it a job — capability-aware router across claude / codex / gemini / kimi / ollama"
   homepage "https://github.com/autumngarage/conductor"
-  url "https://github.com/autumngarage/conductor/archive/refs/tags/v0.10.22.tar.gz"
-  sha256 "48f65d87adae28cb3dae4667c0c837c2fe387b2dfcc1acb7eaf707679b9cfd05"
+  url "https://github.com/autumngarage/conductor/archive/refs/tags/v0.10.23.tar.gz"
+  sha256 "cf1cc3df1bdfadc77c52e4825cc998554f5c4d413e6f515cbee5499b7f878d37"
   license "MIT"
 
   depends_on "python@3.12"
